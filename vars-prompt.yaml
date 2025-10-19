@@ -4,7 +4,7 @@
   vars_prompt:
   - name: username
     prompt: What is your username?
-    private: false
+    private: true
   tasks:
    - name: printing vars prompt
      ansible.builtin.debug:
