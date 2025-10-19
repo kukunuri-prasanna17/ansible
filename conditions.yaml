@@ -6,6 +6,7 @@
   tasks:
   - name: creating conditions
     ansible.builtin.debug:
-      msg: "Given Number is {{ Number }} is less than 10"
-    when: Number > 10
+      msg: "Given Number is {{ Number }} is less than 10" #print this, if number is less than only
+    when: Number > 10 #number is greater than 5
+    
   
