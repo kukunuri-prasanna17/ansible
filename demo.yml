@@ -1,0 +1,12 @@
+- name: PRASANNA
+  hosts: frontend
+  tasks:
+  - name: PLAY-01
+    ansible.builtin.debug:
+    msg: "Hi! I am PRASANNA"
+- name: PRASANNA
+  hosts: frontend
+  tasks:
+  - name: PLAY-02
+    ansible.builtin.debug:
+    msg: "Hi! I am Lakshmi"
