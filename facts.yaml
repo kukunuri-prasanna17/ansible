@@ -1,0 +1,14 @@
+- name: OS 
+  hosts: local
+  connection: local
+  tasks:
+   - name: install nginx dnf
+     ansible.builtin.dnf:
+      name: nginx
+      state: latest
+     when: ansible_os_family == "RedHat"
+   - name: install nginx apt
+     ansible.builtin.apt:
+      name: nginx
+      state: latest
+     when: ansible_os_family == "Debian"
