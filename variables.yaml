@@ -1,11 +1,12 @@
 - name: varibles
   hosts: local
-  connection: local 
+  connection: local # Ansible connects with local host by itself
   vars: 
     course: ansible
     duration: 40mins
     trainer: Prasanna
   tasks:
   - name: print the varibles
+    course: Aws with DevOps  #overhidden with task & first prefernce
     ansible.builtin.debug:
       msg: "Course Name is:{{ course }}, Duration: {{ duration }}, by: {{ trainer }}"
