@@ -7,6 +7,6 @@
     trainer: Prasanna
   tasks:
   - name: print the varibles
-    course: Aws with DevOps  #overhidden with task & first prefernce
+    course: Aws with DevOps  #replace with task & first prefernce
     ansible.builtin.debug:
       msg: "Course Name is:{{ course }}, Duration: {{ duration }}, by: {{ trainer }}"
