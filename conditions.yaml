@@ -7,5 +7,5 @@
   - name: creating conditions
     ansible.builtin.debug:
       msg: "Given Number is {{ Number }} is less than 10"
-    when: Number < 10
+    when: Number > 10
   
