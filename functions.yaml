@@ -2,6 +2,18 @@
   hosts: local
   connection: local
   tasks:
+   - name: default function
+     ansible.builtin.debug:
+      msg: "My name is: {{ name | default (' prasanna') }}"
+
+- name: functions
+  hosts: local
+  connection: local
+  vars: 
+   skills: java,python,mysql,mongodb
+  tasks:
    - name: checking function
      ansible.builtin.debug:
-        msg: " Hello! {{  name | default('prasanna') }}"
+      msg: "My name is: {{ skills | split (',') }}"
+
+      
