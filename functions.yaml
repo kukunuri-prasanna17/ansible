@@ -80,7 +80,7 @@
       msg: "{{ name | upper }}"
    - name: case sensitive
      ansible.builtin.debug:
-      msg: "{{ gmail | lower }}"
+       msg: "{{ gmail | lower }}"
 
 - name: functions
   hosts: local
@@ -90,6 +90,6 @@
   tasks:
    - name: checking ipaddress valid or not
      ansible.builtin.debug:
-      msg: "{{ ipaddress | ansible.utils.ipv4  }}"
+       msg: "{{ ipaddress | ansible.utils.ipv4  }}"
 
 
