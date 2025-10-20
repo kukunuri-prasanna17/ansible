@@ -31,4 +31,20 @@
      ansible.builtin.debug:
       msg: ":{{ tags | dict2items }}"
 
+- name: functions
+  hosts: local
+  connection: local
+  vars: 
+   Listtags: 
+   - key: environment
+     value: dev
+   - key: project
+     value: roboshop
+   - key: tools
+     value: ansible
+  tasks:
+   - name: checking function
+     ansible.builtin.debug:
+      msg: ":{{ tags | items2dict }}"
+
       
