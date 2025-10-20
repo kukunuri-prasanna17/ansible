@@ -13,7 +13,7 @@
   vars: 
    skills: java,python,mysql,mongodb #string
   tasks:
-   - name: checking function
+   - name: converting strings to list
      ansible.builtin.debug:
       msg: "My skills are:{{ skills | split (',') }}"
 
@@ -27,10 +27,11 @@
     project: roboshop
     tools: ansible
   tasks:
-   - name: checking function
+   - name: converting map to list
      ansible.builtin.debug:
-      msg: ":{{ tags | dict2items }}"
+      msg: "{{ tags | dict2items }}"
 
+# list to map
 - name: functions
   hosts: local
   connection: local
@@ -43,8 +44,18 @@
    - key: tools
      value: ansible
   tasks:
-   - name: checking function
+   - name: converting list to maps
      ansible.builtin.debug:
-      msg: ":{{ Listtags | items2dict }}"
+      msg: "{{ Listtags | items2dict }}"
 
+- name: functions
+  hosts: local
+  connection: local
+  tasks:
+   - name: read yaml and converting into a variable
+     ansible.builtin.set_fact:
+     fact_yaml:  "{{lookup( 'file', 'student.yaml' ) | from_yaml }}"
       
+   - name: converting  yaml into json
+     ansible.builtin.debug:
+       msg: "json:{{ fact_yaml | to_json }}"
