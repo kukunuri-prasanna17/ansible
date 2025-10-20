@@ -54,7 +54,7 @@
   tasks:
    - name: read yaml and converting into a variable
      ansible.builtin.set_fact:
-     student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
+      student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
       
    - name: converting  yaml into json
      ansible.builtin.debug:
