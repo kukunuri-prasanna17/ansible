@@ -10,9 +10,9 @@
 
    -  name: print the output
       ansible.builtin.debug:
-       msg:"{{ user_output }}"
+       msg: "{{ user_output }}"
    
-  #  - name: creating user if not
-  #    ansible.builtin.command: useradd prasanna
-  #    when: user_output.rc !=  0 
+   - name: creating user if not
+     ansible.builtin.command: useradd prasanna
+     when: user_output.rc !=  0 
 
