@@ -45,6 +45,6 @@
   tasks:
    - name: checking function
      ansible.builtin.debug:
-      msg: ":{{ tags | items2dict }}"
+      msg: ":{{ Listtags | items2dict }}"
 
       
