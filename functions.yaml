@@ -75,6 +75,6 @@
   tasks:
    - name: case sensitive
      ansible.builtin.debug:
-      msg: "My skills are:{{ name | upper case }}"
+      msg: "My skills are:{{ name | upper }}"
 
 
