@@ -100,7 +100,7 @@
   connection: local
   tasks:
    - name: checking with command modules
-     ansible.builtin.command: pwd
+     ansible.builtin.command: cat /etc/passwd | grep root
      register: module_output
    - name: checking with output
      ansible.builtin.debug: 
