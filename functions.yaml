@@ -86,10 +86,10 @@
   hosts: local
   connection: local
   vars:
-  ipaddress: "182.32.8.9"
+   ipaddress: "182.32.8.9"
   tasks:
    - name: checking ipaddress valid or not
      ansible.builtin.debug:
-       msg: "{{ ipaddress | ansible.utils.ipaddr }}"
+       msg: "{{ ipaddress | ansible.utils.ipv4 }}"
 
 
