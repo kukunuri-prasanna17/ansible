@@ -99,20 +99,20 @@
   hosts: local
   connection: local
   tasks:
-   - name: checking with command modules
+   - name: checking with modules
      #ansible.builtin.command: cat /etc/passwd | grep root     #can't access
      ansible.builtin.shell: cat /etc/passwd | grep root
-     register: module_output
+     register: module_output   # creating a variable with output 
 
    - name: checking with output
      ansible.builtin.debug: 
        msg: " {{ module_output }}"
 
-   - name: redirecting inside shell witch command modules
+   - name: redirecting inside shell witch command module
      ansible.builtin.command: ls -lt > /tmp/text.txt 
-     ignore_errors: true
+     ignore_errors: true    #ignore errors continue with next line
 
-   - name: checking with command modules
+   - name: redirecting inside shell witch shell module
      ansible.builtin.shell: ls -lt > /tmp/output.txt
      register: redirect_output
 
