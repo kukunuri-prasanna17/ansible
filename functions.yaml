@@ -6,6 +6,8 @@
      ansible.builtin.debug:
       msg: "My name is:{{ name | default (' prasanna') }}"
 
+#map==dict==object all are same dt
+
 # strings to list using function 
 - name: functions
   hosts: local
@@ -54,7 +56,7 @@
   connection: local
   tasks:
    - name: read yaml and converting into a variable
-     ansible.builtin.set_fact:
+     ansible.builtin.set_fact:                                           #fact=variables,set_fact=creating vars
       student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
       
    - name: converting  yaml into json
@@ -64,7 +66,7 @@
    - name: save json to file
      ansible.builtin.copy:
       dest: ./student-data.json
-      content: "json:{{ student_yaml | to_nice_json }}"   
+      content: "json:{{ student_yaml | to_nice_json }}"    #nice means readable to human
 
 - name: functions
   hosts: local
@@ -79,5 +81,15 @@
    - name: case sensitive
      ansible.builtin.debug:
       msg: "{{ gmail | lower }}"
+
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+  ipaddress: "182.32.8.9"
+  tasks:
+   - name: checking ipaddress valid or not
+     ansible.builtin.debug:
+      msg: "{{ ipaddress | ansible.utils.ipv4  }}"
 
 
