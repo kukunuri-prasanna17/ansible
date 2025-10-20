@@ -108,8 +108,9 @@
      ansible.builtin.debug: 
        msg: " {{ module_output }}"
 
-   - name: checking with command modules
+   - name: redirecting inside shell witch command modules
      ansible.builtin.command: ls -lt > /tmp/text.txt 
+     ignore_errors: true
 
    - name: checking with command modules
      ansible.builtin.shell: ls -lt > /tmp/output.txt
