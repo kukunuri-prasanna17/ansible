@@ -6,14 +6,29 @@
      ansible.builtin.debug:
       msg: "My name is:{{ name | default (' prasanna') }}"
 
+# strings to list using function 
 - name: functions
   hosts: local
   connection: local
   vars: 
-   skills: java,python,mysql,mongodb
+   skills: java,python,mysql,mongodb #string
   tasks:
    - name: checking function
      ansible.builtin.debug:
       msg: "My skills are:{{ skills | split (',') }}"
+
+# map to list using function 
+- name: functions
+  hosts: local
+  connection: local
+  vars: 
+   tags: 
+    environment: dev
+    project: roboshop
+    tool: ansible
+  tasks:
+   - name: checking function
+     ansible.builtin.debug:
+      msg: ":{{ tags | dict3items }}"
 
       
