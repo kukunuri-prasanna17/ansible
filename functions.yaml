@@ -25,10 +25,9 @@
    tags: 
     environment: dev
     project: roboshop
-    tool: ansible
   tasks:
    - name: checking function
      ansible.builtin.debug:
-      msg: ":{{ tags | dict3items }}"
+      msg: ":{{ tags | dict2items }}"
 
       
