@@ -90,6 +90,6 @@
   tasks:
    - name: checking ipaddress valid or not
      ansible.builtin.debug:
-       msg: "{{ ipaddress | ansible.utils.ipv4  }}"
+       msg: "{{ ipaddress | ansible.utils.ipaddr }}"
 
 
