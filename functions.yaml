@@ -100,11 +100,23 @@
   connection: local
   tasks:
    - name: checking with command modules
-     #ansible.builtin.command: cat /etc/passwd | grep root
+     #ansible.builtin.command: cat /etc/passwd | grep root     #can't access
      ansible.builtin.shell: cat /etc/passwd | grep root
      register: module_output
+
    - name: checking with output
      ansible.builtin.debug: 
        msg: " {{ module_output }}"
+
+   - name: checking with command modules
+     ansible.builtin.command: ls -lt > /tmp/text.txt 
+
+   - name: checking with command modules
+     ansible.builtin.shell: ls -lt > /tmp/output.txt
+     register: redirect_output
+
+   - name: checking with output
+     ansible.builtin.debug: 
+       msg: " {{ redirect_output }}"
 
     
