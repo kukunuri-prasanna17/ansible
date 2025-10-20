@@ -4,7 +4,7 @@
   tasks:
    - name: default function
      ansible.builtin.debug:
-      msg: "My name is: {{ name | default (' prasanna') }}"
+      msg: "My name is:{{ name | default (' prasanna') }}"
 
 - name: functions
   hosts: local
@@ -14,6 +14,6 @@
   tasks:
    - name: checking function
      ansible.builtin.debug:
-      msg: "My name is: {{ skills | split (',') }}"
+      msg: "My skills are:{{ skills | split (',') }}"
 
       
