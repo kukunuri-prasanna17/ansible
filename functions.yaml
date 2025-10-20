@@ -25,6 +25,7 @@
    tags: 
     environment: dev
     project: roboshop
+    tools: ansible
   tasks:
    - name: checking function
      ansible.builtin.debug:
