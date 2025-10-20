@@ -75,6 +75,9 @@
   tasks:
    - name: case sensitive
      ansible.builtin.debug:
-      msg: "My skills are:{{ name | upper }}"
+      msg: "{{ name | upper }}"
+   - name: case sensitive
+     ansible.builtin.debug:
+      msg: "{{ gmail | lower }}"
 
 
