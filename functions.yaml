@@ -48,6 +48,7 @@
      ansible.builtin.debug:
       msg: "{{ Listtags | items2dict }}"
 
+# reading,convert into a var and save to a file in (instance) of pwd
 - name: functions
   hosts: local
   connection: local
@@ -63,4 +64,17 @@
    - name: save json to file
      ansible.builtin.copy:
       dest: ./student-data.json
-      content: "json:{{ student_yaml | to_nice_json }}"
+      content: "json:{{ student_yaml | to_nice_json }}"   
+
+- name: functions
+  hosts: local
+  connection: local
+  vars: 
+   name: Prasanna Kukunuri
+   gmail: sri@GMAIL.COM
+  tasks:
+   - name: case sensitive
+     ansible.builtin.debug:
+      msg: "My skills are:{{ name | upper case }}"
+
+
