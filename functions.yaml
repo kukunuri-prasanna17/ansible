@@ -82,14 +82,23 @@
      ansible.builtin.debug:
        msg: "{{ gmail | lower }}"
 
+
+# To check Ip address 
 - name: functions
   hosts: local
   connection: local
   vars:
-   ipaddress: "182.32.8.9"
+   ipaddress: "182.32.8.9"  #to check this depend pack has to be install #pip3.9 install netaddr
   tasks:
    - name: checking ipaddress valid or not
      ansible.builtin.debug:
        msg: "{{ ipaddress | ansible.utils.ipv4 }}"
 
-
+# shell vs command modules
+- name: modules
+  hosts: local
+  connection: local
+  tasks:
+   - name: checking with command modules
+     ansible.builtin.command: pwd
+     
