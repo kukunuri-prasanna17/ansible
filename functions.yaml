@@ -101,4 +101,7 @@
   tasks:
    - name: checking with command modules
      ansible.builtin.command: pwd
-     
+     register: module_output
+   - name: checking with output
+     ansible.builtin.debug: 
+       msg: " {{ module_output }}"
